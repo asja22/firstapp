@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_042533) do
+ActiveRecord::Schema.define(version: 2018_10_29_050913) do
 
   create_table "employees", force: :cascade do |t|
     t.integer "empid"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2018_10_29_042533) do
     t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_employees_on_email", unique: true
   end
 
 end
