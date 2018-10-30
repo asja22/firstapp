@@ -13,7 +13,34 @@ class EmployeesController < ApplicationController
   def new
     @employee=Employee.new
   end
+  
+  def create
+      @employee = Employee.new(employee_params)
+      if @employee.save
+        flash[:success] = "New Employee Created"
+        redirect_to @employee
+      else
+        render 'new'
+      end
+    end
 
   def edit
+    @employee=Employee.find(params[:id])
   end
+  
+  def update
+    @employee = Employee.find(params[:id])
+      if @employee.update_attributes(employee_params)
+        flash[:success] = "Profile updated"
+              redirect_to @employee
+      else
+        render 'edit'
+      end
+  end
+  
+  def employee_params
+        params.require(:employee).permit(:empid, :name, :email, :department,
+                                     :position)
+      end
+  
 end

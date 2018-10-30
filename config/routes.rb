@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'employees#home'
   #get '/list' , to: 'employees#list'
   get '/new' , to: 'employees#new'
+  post '/new' , to: 'employees#create'
   #get '/edit' , to: 'employees#edit'
   
   resources :employees

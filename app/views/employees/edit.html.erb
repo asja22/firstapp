@@ -1,5 +1,40 @@
 <center>
 <h1>Edit any Employee Details</h1>
+
+<%= form_for(@employee) do |f| %>
+	  
+	  <% if @employee.errors.any? %>
+	    <div id="error_explanation">
+	      <div class="alert alert-danger">
+	        The form contains <%= pluralize(@employee.errors.count, "error") %>.
+	      </div>
+	      <ul>
+	      <% @employee.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	  </ul>
+  </div>
+<%end%>
+
+      <p><%= f.label :empid %>
+      <%= f.text_field :empid, class: 'form-control' %></p>
+
+     <p><%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %></p>
+
+      <p><%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %></p>
+	  
+      <p><%= f.label :department %>
+      <%= f.text_field :department, class: 'form-control' %></p>
+	  
+      <p><%= f.label :position %>
+      <%= f.text_field :position, class: 'form-control' %></p>
+
+
+      <p><%= f.submit "Save changes", class: "btn btn-primary" %></p>
+    <% end %>
+
 <p><%= link_to "Back to home", root_path %></p>
 <p>Find me in app/views/employees/edit.html.erb</p>
 </center>
