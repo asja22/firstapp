@@ -1,0 +1,15 @@
+<center>
+<h1>List of Employees</h1>
+<p>Employee ID :<%= @employee.empid%></p> 
+<p>Employee Name :<%= @employee.name%></p>
+<p>Employee E-Mail :<%= @employee.email%></p>
+<p>Employee Department :<%= @employee.department%></p>
+<p>Employee Position :<%= @employee.position%></p>
+
+<!--<%= @employee.name%>, <%= @employee.email%>, <%= @employee.department%>, <%= @employee.position%>, -->
+
+<p><%= link_to "Edit", edit_employee_path(@employee) %></p>
+<p><%= link_to "Back to Employees list", employees_path %></p>
+<p><%= link_to "Back to home", root_path %></p>
+<p>Find me in app/views/employees/list.html.erb</p>
+</center>

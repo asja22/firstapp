@@ -1,0 +1,11 @@
+<center>
+<h1>List of Employees</h1>
+
+<% @employee.each do |employee| %>
+<%= employee.id%>, <%= employee.empid%>, <%= employee.name%>, <%= employee.email%>, <%= employee.department%>, <%= employee.position%>, <%= link_to "view", employee_path(employee) %> <%= link_to "Edit", edit_employee_path(employee) %>
+<% end %>
+
+
+<p><%= link_to "Back to home", root_path %></p>
+<p>Find me in app/views/employees/list.html.erb</p>
+</center>
