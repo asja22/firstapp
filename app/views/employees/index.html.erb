@@ -1,11 +1,27 @@
 <center>
 <h1>List of Employees</h1>
-
+<table style="width:70%"; border="1">
+  <tr>
+    <th>Sl. No. &nbsp; &nbsp; &nbsp;</th>
+    <th>Employee ID &nbsp; &nbsp; </th>
+    <th>Employee Name &nbsp; &nbsp; </th>
+	<th>Employee E-Mail &nbsp; &nbsp; </th>
+	<th>Department &nbsp; &nbsp; </th>
+	<th>Position &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	<th>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </th>
+	
+	
+  </tr>
 <% @employee.each do |employee| %>
-<p><%= employee.id%>, <%= employee.empid%>, <%= employee.name%>, <%= employee.email%>, <%= employee.department%>, <%= employee.position%>, <%= link_to "view", employee_path(employee) %> <%= link_to "Edit", edit_employee_path(employee) %> <%= link_to "delete", employee, method: :delete, data: { confirm: "You sure?" } %></p>
+
+    <tr>
+    <td><%= employee.id%></td> <td><%= employee.empid%></td> <td><%= employee.name%></td> <td><%= employee.email%></td> <td><%= employee.department%></td> <td><%= employee.position%></td> <td><%= link_to "view", employee_path(employee) %></td> <td><%= link_to "Edit", edit_employee_path(employee) %></td> <td><%= link_to "delete", employee, method: :delete, data: { confirm: "You sure?" } %></td>
+    </tr>
 <% end %>
 
-
+</table>
 <p><%= link_to "Back to home", root_path %></p>
 <p>Find me in app/views/employees/list.html.erb</p>
 </center>

@@ -1,10 +1,37 @@
 <center>
 <h1>List of Employees</h1>
-<p>Employee ID :<%= @employee.empid%></p> 
+
+<table style="width:40%"; border="1">
+  <tr>
+    <th>Employee ID: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.empid%></th>	
+  </tr>
+  
+  <tr>
+    <th>Employee Name: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.name%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>E-Mail: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.email%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>Department: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.department%> &nbsp; &nbsp; </th>	
+  </tr>
+  
+  <tr>
+    <th>Position: &nbsp; &nbsp; &nbsp;</th>
+    <th><%= @employee.position%> &nbsp; &nbsp; </th>	
+  </tr>
+</table>
+<!--<p>Employee ID :<%= @employee.empid%></p> 
 <p>Employee Name :<%= @employee.name%></p>
 <p>Employee E-Mail :<%= @employee.email%></p>
 <p>Employee Department :<%= @employee.department%></p>
-<p>Employee Position :<%= @employee.position%></p>
+<p>Employee Position :<%= @employee.position%></p> -->
 
 <!--<%= @employee.name%>, <%= @employee.email%>, <%= @employee.department%>, <%= @employee.position%>, -->
 
