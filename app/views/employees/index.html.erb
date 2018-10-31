@@ -2,7 +2,7 @@
 <h1>List of Employees</h1>
 
 <% @employee.each do |employee| %>
-<p><%= employee.id%>, <%= employee.empid%>, <%= employee.name%>, <%= employee.email%>, <%= employee.department%>, <%= employee.position%>, <%= link_to "view", employee_path(employee) %> <%= link_to "Edit", edit_employee_path(employee) %></p>
+<p><%= employee.id%>, <%= employee.empid%>, <%= employee.name%>, <%= employee.email%>, <%= employee.department%>, <%= employee.position%>, <%= link_to "view", employee_path(employee) %> <%= link_to "Edit", edit_employee_path(employee) %> <%= link_to "delete", employee, method: :delete, data: { confirm: "You sure?" } %></p>
 <% end %>
 
 
