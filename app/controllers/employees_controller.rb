@@ -41,12 +41,21 @@ class EmployeesController < ApplicationController
   def employee_params
         params.require(:employee).permit(:empid, :name, :email, :department,
                                      :position)
-      end
+  end
   
   def destroy
       Employee.find(params[:id]).destroy
       flash[:success] = "Employee deleted"
       redirect_to employees_path
-        end
+  end
+  
+  def search
+    if params[:search].blank?  
+        redirect_to(employees_path, alert: "Empty field!") and return  
+      else  
+        @employee = params[:search].downcase  
+        @results = Employee.all.where("lower(name) LIKE :search", search: "%#{@employee}%")  
+      end 
+  end
   
 end
