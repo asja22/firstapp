@@ -25,8 +25,11 @@
       <p><%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %></p>
 	  
-      <p><%= f.label :department %>
-      <%= f.text_field :department, class: 'form-control' %></p>
+  <!--   <p><%= f.label :department %>
+      <%= f.text_field :department, class: 'form-control' %></p> -->
+	  
+	  <p><%= f.label :department %>
+      <%= f.select :department ,[['HR','HR'],['IT','IT'],['Production','Production'],['Quality Control','Quality Control']], class: 'form-control'%></p>
 	  
       <p><%= f.label :position %>
       <%= f.text_field :position, class: 'form-control' %></p>
